@@ -5,7 +5,7 @@ from PIL import Image
 from tensorflow.keras.preprocessing.image import img_to_array
 
 # Load the saved model
-loaded_model = tf.keras.models.load_model("path/to/helmet_detection_model.h5")
+loaded_model = tf.keras.models.load_model("./helmet_detection_model.h5")
 
 # Function to preprocess the input image
 def preprocess_image(image):
