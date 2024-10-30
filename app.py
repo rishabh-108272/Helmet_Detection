@@ -10,6 +10,7 @@ loaded_model = tf.keras.models.load_model("./helmet_detection_model.h5")
 # Function to preprocess the input image
 def preprocess_image(image):
     image = image.resize((224, 224))  # Resize the image
+    image = image.convert("RGB")        # Convert image to RGB (discard alpha channel if exists)
     image = img_to_array(image)         # Convert to array
     image = np.expand_dims(image, axis=0)  # Add batch dimension
     image = tf.keras.applications.resnet50.preprocess_input(image)  # Preprocess
